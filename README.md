@@ -1,2 +1,2 @@
 # Game
- Software Engineering Project
+ A chicken-themed capture-the-flag video game.
