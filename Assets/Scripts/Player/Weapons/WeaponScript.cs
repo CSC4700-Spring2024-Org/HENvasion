@@ -12,6 +12,8 @@ public class WeaponScript : MonoBehaviour
     public GameObject emptyGunGameObject;
     private Boolean canShoot;
     public float reloadSpeed;
+    public Boolean isMachineGun;
+    public float bulletCount;
 
     private void Start()
     {
@@ -20,15 +22,24 @@ public class WeaponScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && transform.parent == emptyGunGameObject.transform && canShoot)
+        //if (Input.GetMouseButton(0) && transform.parent == emptyGunGameObject.transform && canShoot && isMachineGun)
+        //shootWeapon();
+        if (audioSource.time > .3f)
+        {
+            audioSource.Stop();
+        }
+        if (Input.GetMouseButton(0) && isMachineGun && !audioSource.isPlaying && transform.parent == emptyGunGameObject.transform)
+            shootWeapon();
+        else if (Input.GetMouseButtonDown(0) && transform.parent == emptyGunGameObject.transform && canShoot && !audioSource.isPlaying)
             shootWeapon();
 
     }
     void shootWeapon()
     {
-        audioSource.enabled = true;
+
         audioSource.Play();
-        StartCoroutine(DisableAudioSourceAfterDelay(reloadSpeed)); // Wait for 1 second
+        if(!isMachineGun)
+            StartCoroutine(DisableAudioSourceAfterDelay(reloadSpeed)); // Wait for 1 second
     }
     IEnumerator DisableAudioSourceAfterDelay(float delay)
     {
