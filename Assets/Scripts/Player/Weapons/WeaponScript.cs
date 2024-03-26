@@ -24,20 +24,24 @@ public class WeaponScript : MonoBehaviour
     {
         //if (Input.GetMouseButton(0) && transform.parent == emptyGunGameObject.transform && canShoot && isMachineGun)
         //shootWeapon();
-        if (audioSource.time > .3f)
+        if (transform.parent != null)
         {
-            audioSource.Stop();
+            if (audioSource.time > .3f)
+            {
+                audioSource.Stop();
+            }
+            if (Input.GetMouseButton(0) && isMachineGun && !audioSource.isPlaying && transform.parent.name == emptyGunGameObject.transform.name)
+                shootWeapon();
+            else if (Input.GetMouseButtonDown(0) && transform.parent.name == emptyGunGameObject.transform.name && canShoot && !audioSource.isPlaying) 
+                shootWeapon();
+          
         }
-        if (Input.GetMouseButton(0) && isMachineGun && !audioSource.isPlaying && transform.parent == emptyGunGameObject.transform)
-            shootWeapon();
-        else if (Input.GetMouseButtonDown(0) && transform.parent == emptyGunGameObject.transform && canShoot && !audioSource.isPlaying)
-            shootWeapon();
-
     }
     void shootWeapon()
     {
 
         audioSource.Play();
+        Debug.Log("It's playing");
         if(!isMachineGun)
             StartCoroutine(DisableAudioSourceAfterDelay(reloadSpeed)); // Wait for 1 second
     }
