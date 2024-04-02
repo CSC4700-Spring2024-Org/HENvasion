@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Fall_Off_Map : MonoBehaviour
 {
-    // Update is called once per frame
+    // Update is called once per frame.
     public Transform spawn1;
     public CharacterController characterController;
     void Update()
