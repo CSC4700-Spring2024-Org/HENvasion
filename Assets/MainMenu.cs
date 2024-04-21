@@ -11,7 +11,7 @@ public void PlayGame(){
 }
 
 public void QuitGame(){
-    application.Quit();
+    Application.Quit();
 }
 
 }
