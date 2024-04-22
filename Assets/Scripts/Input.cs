@@ -1,18 +1,23 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour
 {
-    public InputField inputField;
-    public string userInput;
+    public TMP_Text obj_text;
+    public TMP_InputField display;
 
-    public void SaveInput()
+    public void Start()
     {
-    userInput = inputField.text;
-    PlayerPrefs.SetString("UserInput", userInput);
+        obj_text.text = PlayerPrefs.GetString("user_name");
     }
     
-    public string getUsername() {
-        return userInput;
+    public void Create()
+    {
+        obj_text.text = display.text;
+        PlayerPrefs.SetString("user_name", obj_text.text);
+        PlayerPrefs.Save();
+        Debug.Log(obj_text.text);
     }
+    
 }
