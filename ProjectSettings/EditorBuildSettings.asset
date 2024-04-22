@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuUpdated.unity
     guid: 78ffeee1f4b4bde408638d982ed130c5
   - enabled: 1
-    path: Assets/Scenes/Game Lobby.unity
+    path: Assets/Scenes/Backup.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/UserName Screen.unity
     guid: cf45f9221070ac947996a313c06efc56
+  - enabled: 1
+    path: Assets/Scenes/Game Lobby.unity
+    guid: 8e125cfa8418bbe42b132dd8e4de6c6d
   m_configObjects: {}

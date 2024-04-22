@@ -10,13 +10,13 @@ public class Flag : MonoBehaviour
     private bool takenFlag = false;
     private float timeEntered;
     public Transform flagHolder;
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
     public TMP_Text flagText;
     public bool textWorking;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -57,7 +57,7 @@ public class Flag : MonoBehaviour
         transform.SetParent(flagHolder);
         transform.localPosition = Vector3.zero; // Adjust as necessary //Vector3.zero
         transform.localRotation = Quaternion.identity;// Adjust as necessary //Quaternion.identity
-        audioSource.Play();
+       // audioSource.Play();
     }
     /*IEnumerator WaitForFlag(float delay)
     {
