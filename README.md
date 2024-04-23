@@ -1,4 +1,4 @@
-# Game
+# HenVasion
  A chicken-themed capture-the-flag video game.
 
 Running HenVasion Locally with Unity:
