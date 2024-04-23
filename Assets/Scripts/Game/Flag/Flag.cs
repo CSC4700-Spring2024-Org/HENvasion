@@ -13,8 +13,10 @@ public class Flag : MonoBehaviour
     //private AudioSource audioSource;
     public TMP_Text flagText;
     public bool textWorking;
+    public static int eggCount;
 
-    private void Start()
+
+private void Start()
     {
         //audioSource = GetComponent<AudioSource>();
     }
@@ -43,13 +45,17 @@ public class Flag : MonoBehaviour
 
     public void Update()
     {
-        if(textWorking)
+        if (textWorking)
             flagText.text = "Picking up egg in " + Mathf.CeilToInt(5 - (Time.time - timeEntered)) + " seconds";
         if (!takenFlag && timeEntered >= 0 && playerEntered && (Time.time - timeEntered >= 5))
         {
             takenFlag = true;
             PickUpFlag();
             flagText.gameObject.SetActive(false);
+            eggCount = eggCount+1;
+            playerEntered = false;
+            timeEntered = -1;
+            textWorking = false;
         }
     }
     private void PickUpFlag()

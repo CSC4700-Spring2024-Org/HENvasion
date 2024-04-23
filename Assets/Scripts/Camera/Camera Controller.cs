@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float minVerticalAngle = -60f; // Minimum vertical rotation angle in degrees
-    public float maxVerticalAngle = 60f; // Maximum vertical rotation angle in degrees
+    public float minVerticalAngle = -180f; // Minimum vertical rotation angle in degrees
+    public float maxVerticalAngle = 180f; // Maximum vertical rotation angle in degrees
 
     private float rotationX; // Current vertical rotation
 

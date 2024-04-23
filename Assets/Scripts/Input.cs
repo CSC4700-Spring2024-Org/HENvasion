@@ -11,7 +11,8 @@ public class InputHandler : MonoBehaviour
     {
         obj_text.text = PlayerPrefs.GetString("user_name");
     }
-    
+
+
     public void Create()
     {
         obj_text.text = display.text;
